@@ -1,0 +1,6 @@
+.gitignore
+jasmine.json
+package-lock.json
+tsconfig.json
+tests
+.github
