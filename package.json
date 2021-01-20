@@ -1,0 +1,25 @@
+{
+    "name": "minimal-di",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "ts-node src/index.ts",
+        "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
+        "test:watch": "nodemon --watch src --watch tests --exec \"npm run test\" -e ts",
+        "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/jasmine": "^3.6.2",
+        "@types/node": "^12.19.14",
+        "jasmine": "^3.6.4",
+        "nodemon": "^2.0.7",
+        "nyc": "^15.1.0",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.1.3"
+    }
+}
