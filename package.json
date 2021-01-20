@@ -1,7 +1,7 @@
 {
     "name": "minimal-di",
     "version": "1.0.0",
-    "description": "",
+    "description": "A minimalistic Dependency Injection library",
     "main": "index.js",
     "scripts": {
         "build": "tsc",
@@ -10,8 +10,14 @@
         "test:watch": "nodemon --watch src --watch tests --exec \"npm run test\" -e ts",
         "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "dependency injection",
+        "di",
+        "minimalistic",
+        "ioc",
+        "inversion of control"
+    ],
+    "author": "Gustavo.Hillesheim",
     "license": "ISC",
     "devDependencies": {
         "@types/jasmine": "^3.6.2",
