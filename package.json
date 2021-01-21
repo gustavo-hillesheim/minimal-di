@@ -2,7 +2,11 @@
     "name": "minimal-di",
     "version": "1.0.0",
     "description": "A minimalistic Dependency Injection library",
-    "main": "index.js",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "files": [
+        "build"
+    ],
     "scripts": {
         "build": "tsc",
         "start": "ts-node src/index.ts",

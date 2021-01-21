@@ -3,5 +3,6 @@ jasmine.json
 package-lock.json
 tsconfig.json
 tests
+src
 .github
 .nyc_output
