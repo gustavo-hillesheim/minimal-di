@@ -1,6 +1,6 @@
 {
     "name": "minimal-di",
-    "version": "1.0.0-SNAPSHOT.2",
+    "version": "1.0.0-SNAPSHOT.3",
     "description": "A minimalistic Dependency Injection library",
     "main": "build/index.js",
     "types": "build/index.d.ts",
@@ -14,6 +14,15 @@
         "test:watch": "nodemon --watch src --watch tests --exec \"npm run test\" -e ts",
         "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test"
     },
+    "devDependencies": {
+        "@types/jasmine": "^3.6.2",
+        "@types/node": "^12.19.14",
+        "jasmine": "^3.6.4",
+        "nodemon": "^2.0.7",
+        "nyc": "^15.1.0",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.1.3"
+    },
     "keywords": [
         "dependency injection",
         "di",
@@ -23,13 +32,5 @@
     ],
     "author": "Gustavo.Hillesheim",
     "license": "ISC",
-    "devDependencies": {
-        "@types/jasmine": "^3.6.2",
-        "@types/node": "^12.19.14",
-        "jasmine": "^3.6.4",
-        "nodemon": "^2.0.7",
-        "nyc": "^15.1.0",
-        "ts-node": "^9.1.1",
-        "typescript": "^4.1.3"
-    }
+    "repository": "https://github.com/gustavo-hillesheim/minimal-di"
 }
