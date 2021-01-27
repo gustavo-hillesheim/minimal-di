@@ -56,6 +56,27 @@ describe("MinimalDIContainer", () => {
         expect(diContainer.get(TestClass3)).toBeTruthy();
     });
 
+    it("should resolve all dependencies eagerly", () => {
+        const classOneResolver = {
+            resolve: () => new TestClass2(),
+        };
+        const classTwoResolver = {
+            resolve: () => new TestClass3(diContainer.get(TestClass2)),
+        };
+
+        const classOneResolverSpy = spyOn(classOneResolver, "resolve").and.callThrough();
+        const classTwoResolverSpy = spyOn(classTwoResolver, "resolve").and.callThrough();
+
+        diContainer.register(TestClass2, classOneResolver.resolve);
+        diContainer.register(TestClass3, classTwoResolver.resolve);
+
+        expect(classOneResolverSpy).not.toHaveBeenCalled();
+        expect(classTwoResolverSpy).not.toHaveBeenCalled();
+        diContainer.resolveAll();
+        expect(classOneResolverSpy).toHaveBeenCalled();
+        expect(classTwoResolverSpy).toHaveBeenCalled();
+    });
+
     it("should throw error on circular dependencies", () => {
         diContainer.register(TestClass4, () => new TestClass4(diContainer.get(TestClass5)));
         diContainer.register(TestClass5, () => new TestClass5(diContainer.get(TestClass4)));

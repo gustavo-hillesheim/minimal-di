@@ -25,6 +25,10 @@ export class DIResolver {
         return instance;
     }
 
+    getRegisteredTypes(): Type<any>[] {
+        return Array.from(this.resolvers.keys());
+    }
+
     private resolve<T>(type: Type<T>): T | never {
         this.typesBeingResolved.add(type);
         const instance = this.resolvers.get(type)!();
