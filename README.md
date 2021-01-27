@@ -47,3 +47,12 @@ class ComplexComponent {
 }
 diContainer.register(ComplexComponent, () => new ComplexComponent(diContainer.get(SimpleComponent)));
 ```
+
+## Eagerly resolving
+
+To make sure your dependencies are configured correctly and there will be no dependency injection surprise errors during runtime, you can also resolve all dependencies eagerly using the `diContainer.resolveAll` method
+
+```
+diContainer.register(ComplexComponent, () => new ComplexComponent(diContainer.get(SimpleComponent)));
+diContainer.resolveAll(); // Should throw UnknownDependencyError for SimpleComponent
+```
